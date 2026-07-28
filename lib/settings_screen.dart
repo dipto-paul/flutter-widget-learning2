@@ -24,7 +24,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Text("This is Settings Screen !"),
       ),
 
-
     );
   }
 }

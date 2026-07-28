@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_and_routing/home_page.dart';
 import 'package:navigation_and_routing/settings_screen.dart';
+import 'package:navigation_and_routing/profile_screen.dart';
 
 
 class BottomNavigation extends StatefulWidget {
@@ -16,6 +17,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
+
+    List<Widget> screen = [HomePage(), SettingsScreen(), ProfileScreen()];
+
     return Scaffold(
       appBar: AppBar(
         //title: Text("Navigation and Routing", style: TextStyle(fontWeight: FontWeight.bold, )),
@@ -23,7 +27,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
         backgroundColor: Colors.blueAccent,
         elevation: 1,
       ),
-      body: selected_index == 0 ? HomePage() : SettingsScreen(),
+
+      body: screen[selected_index], // for changes screens
+      //body: selected_index == 0 ? HomePage() : SettingsScreen(), // condition for changes
+
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.lightBlue,
           selectedItemColor: Colors.white,
@@ -39,6 +46,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ]),
 
     );
