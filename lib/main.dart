@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_and_routing/bottom_navigation.dart';
 import 'home_page.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: HomePage(),
+      home: BottomNavigation(),
     );
   }
 }
