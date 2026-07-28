@@ -31,6 +31,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
       body: screen[selected_index], // for changes screens
       //body: selected_index == 0 ? HomePage() : SettingsScreen(), // condition for changes
 
+
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.lightBlue,
           selectedItemColor: Colors.white,

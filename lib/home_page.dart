@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_and_routing/profile_screen.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -21,7 +22,15 @@ class _HomePageState extends State<HomePage> {
         elevation: 1,
       ),
       body: Center(
-        child: Text("This is Home Screen"),
+        child: Column(
+           children: [
+             Text("This is Home Screen"),
+             ElevatedButton(onPressed: (){ // navigation.push er jonno
+               Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()));
+
+             }, child: Text("Go to Profile")),
+           ],
+        ),
       ),
 
 
