@@ -9,6 +9,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  int selected_index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,13 +25,21 @@ class _HomePageState extends State<HomePage> {
         child: Text("This is Home Screen"),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.purpleAccent,
+          backgroundColor: Colors.lightBlue,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white54,
+
+          currentIndex: selected_index,
+          onTap: (index){
+            setState(() {
+              selected_index = index;
+            });
+
+          },
+
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
-
       ]),
 
     );
